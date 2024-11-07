@@ -36,7 +36,7 @@ def population_by_ethnicity(array:list[CountyDemographics], string:str) -> float
         total += i.population['2014 Population']*(i.ethnicities[string]/100)
     return total
 
-def population_below_poverty_level(array:list[CountyDemographics], string:str) -> float:
+def population_below_poverty_level(array:list[CountyDemographics]) -> float:
     total = 0.0
     for i in array:
         total += i.population['2014 Population']*(i.income["Persons Below Poverty Level"]/100)

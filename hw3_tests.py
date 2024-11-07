@@ -259,7 +259,7 @@ class TestCases(unittest.TestCase):
         self.assertAlmostEqual(expected, result)
 
     # test population_below_poverty_level
-    def population_below_poverty_level_1(self):
+    def test_population_below_poverty_level_1(self):
         array = [CountyDemographics({'Percent 65 and Older': 13.8,
                                      'Percent Under 18 Years': 25.2,
                                      'Percent Under 5 Years': 6.0},
@@ -284,7 +284,7 @@ class TestCases(unittest.TestCase):
                                     'AL')]
         expected = 4000
         result = hw3.population_below_poverty_level(array)
-        self.assertAlmostEqual(expected, result)
+        self.assertEqual(expected, result)
 
     # Part 4
     # test percent_by_education
@@ -445,33 +445,34 @@ class TestCases(unittest.TestCase):
         result = hw3.percent_below_poverty_level(array)
         self.assertEqual(expected,result)
 
-    # Part 5
-    # test education_greater_than
+        # Part 5
+        # test education_greater_than
+
     def test_education_greater_than(self):
         array = [
             data.CountyDemographics(
-            {'Percent 65 and Older': 13.8,
-             'Percent Under 18 Years': 25.2,
-             'Percent Under 5 Years': 6.0},
-            'Autauga County',
-            {"Bachelor's Degree or Higher": 50,
-             'High School or Higher': 85.6},
-            {'American Indian and Alaska Native Alone': 0.5,
-             'Asian Alone': 1.1,
-             'Black Alone': 18.7,
-             'Hispanic or Latino': 2.7,
-             'Native Hawaiian and Other Pacific Islander Alone': 0.1,
-             'Two or More Races': 1.8,
-             'White Alone': 77.9,
-             'White Alone, not Hispanic or Latino': 75.6},
-            {'Per Capita Income': 24571,
-             'Persons Below Poverty Level': 15,
-             'Median Household Income': 53682},
-            {'2010 Population': 54571,
-             '2014 Population': 10000,
-             'Population Percent Change': 1.5,
-             'Population per Square Mile': 91.8},
-            'AL'),
+                {'Percent 65 and Older': 13.8,
+                 'Percent Under 18 Years': 25.2,
+                 'Percent Under 5 Years': 6.0},
+                'Autauga County',
+                {"Bachelor's Degree or Higher": 50,
+                 'High School or Higher': 85.6},
+                {'American Indian and Alaska Native Alone': 0.5,
+                 'Asian Alone': 1.1,
+                 'Black Alone': 18.7,
+                 'Hispanic or Latino': 2.7,
+                 'Native Hawaiian and Other Pacific Islander Alone': 0.1,
+                 'Two or More Races': 1.8,
+                 'White Alone': 77.9,
+                 'White Alone, not Hispanic or Latino': 75.6},
+                {'Per Capita Income': 24571,
+                 'Persons Below Poverty Level': 15,
+                 'Median Household Income': 53682},
+                {'2010 Population': 54571,
+                 '2014 Population': 10000,
+                 'Population Percent Change': 1.5,
+                 'Population per Square Mile': 91.8},
+                'AL'),
             data.CountyDemographics(
                 {'Percent 65 and Older': 15.3,
                  'Percent Under 18 Years': 25.1,
@@ -520,36 +521,37 @@ class TestCases(unittest.TestCase):
                 'AR')]
         string = "Bachelor's Degree or Higher"
         x = .31
-        expected = [array[0],array[2]]
-        result = hw3.education_greater_than(array,string,x)
-        self.assertEqual(expected,result)
+        expected = [array[0], array[2]]
+        result = hw3.education_greater_than(array, string, x)
+        self.assertEqual(expected, result)
 
-    # test education_less_than
+        # test education_less_than
+
     def test_education_less_than(self):
         array = [
             data.CountyDemographics(
-            {'Percent 65 and Older': 13.8,
-             'Percent Under 18 Years': 25.2,
-             'Percent Under 5 Years': 6.0},
-            'Autauga County',
-            {"Bachelor's Degree or Higher": 50,
-             'High School or Higher': 85.6},
-            {'American Indian and Alaska Native Alone': 0.5,
-             'Asian Alone': 1.1,
-             'Black Alone': 18.7,
-             'Hispanic or Latino': 2.7,
-             'Native Hawaiian and Other Pacific Islander Alone': 0.1,
-             'Two or More Races': 1.8,
-             'White Alone': 77.9,
-             'White Alone, not Hispanic or Latino': 75.6},
-            {'Per Capita Income': 24571,
-             'Persons Below Poverty Level': 15,
-             'Median Household Income': 53682},
-            {'2010 Population': 54571,
-             '2014 Population': 10000,
-             'Population Percent Change': 1.5,
-             'Population per Square Mile': 91.8},
-            'AL'),
+                {'Percent 65 and Older': 13.8,
+                 'Percent Under 18 Years': 25.2,
+                 'Percent Under 5 Years': 6.0},
+                'Autauga County',
+                {"Bachelor's Degree or Higher": 50,
+                 'High School or Higher': 85.6},
+                {'American Indian and Alaska Native Alone': 0.5,
+                 'Asian Alone': 1.1,
+                 'Black Alone': 18.7,
+                 'Hispanic or Latino': 2.7,
+                 'Native Hawaiian and Other Pacific Islander Alone': 0.1,
+                 'Two or More Races': 1.8,
+                 'White Alone': 77.9,
+                 'White Alone, not Hispanic or Latino': 75.6},
+                {'Per Capita Income': 24571,
+                 'Persons Below Poverty Level': 15,
+                 'Median Household Income': 53682},
+                {'2010 Population': 54571,
+                 '2014 Population': 10000,
+                 'Population Percent Change': 1.5,
+                 'Population per Square Mile': 91.8},
+                'AL'),
             data.CountyDemographics(
                 {'Percent 65 and Older': 15.3,
                  'Percent Under 18 Years': 25.1,
@@ -602,7 +604,8 @@ class TestCases(unittest.TestCase):
         result = hw3.education_less_than(array, string, x)
         self.assertEqual(expected, result)
 
-    # test ethnicity_greater_than
+        # test ethnicity_greater_than
+
     def test_ethnicity_greater_than(self):
         array = [
             data.CountyDemographics(
@@ -680,7 +683,87 @@ class TestCases(unittest.TestCase):
         result = hw3.ethnicity_greater_than(array, string, x)
         self.assertEqual(expected, result)
 
-    # test poverty_level_greater_than
+        # test ethnicity_greater_than
+
+    def test_ethnicity_less_than(self):
+        array = [
+            data.CountyDemographics(
+                {'Percent 65 and Older': 13.8,
+                 'Percent Under 18 Years': 25.2,
+                 'Percent Under 5 Years': 6.0},
+                'Autauga County',
+                {"Bachelor's Degree or Higher": 50,
+                 'High School or Higher': 85.6},
+                {'American Indian and Alaska Native Alone': 0.5,
+                 'Asian Alone': 20,
+                 'Black Alone': 18.7,
+                 'Hispanic or Latino': 2.7,
+                 'Native Hawaiian and Other Pacific Islander Alone': 0.1,
+                 'Two or More Races': 1.8,
+                 'White Alone': 77.9,
+                 'White Alone, not Hispanic or Latino': 75.6},
+                {'Per Capita Income': 24571,
+                 'Persons Below Poverty Level': 15,
+                 'Median Household Income': 53682},
+                {'2010 Population': 54571,
+                 '2014 Population': 10000,
+                 'Population Percent Change': 1.5,
+                 'Population per Square Mile': 91.8},
+                'AL'),
+            data.CountyDemographics(
+                {'Percent 65 and Older': 15.3,
+                 'Percent Under 18 Years': 25.1,
+                 'Percent Under 5 Years': 6.0},
+                'Crawford County',
+                {"Bachelor's Degree or Higher": 30,
+                 'High School or Higher': 82.2},
+                {'American Indian and Alaska Native Alone': 2.5,
+                 'Asian Alone': 30,
+                 'Black Alone': 1.6,
+                 'Hispanic or Latino': 6.7,
+                 'Native Hawaiian and Other Pacific Islander Alone': 0.1,
+                 'Two or More Races': 2.8,
+                 'White Alone': 91.5,
+                 'White Alone, not Hispanic or Latino': 85.6},
+                {'Per Capita Income': 19477,
+                 'Persons Below Poverty Level': 5,
+                 'Median Household Income': 39479},
+                {'2010 Population': 61948,
+                 '2014 Population': 10000,
+                 'Population Percent Change': -0.4,
+                 'Population per Square Mile': 104.4},
+                'AR'),
+            data.CountyDemographics(
+                {'Percent 65 and Older': 15.3,
+                 'Percent Under 18 Years': 25.1,
+                 'Percent Under 5 Years': 6.0},
+                'Crawford County',
+                {"Bachelor's Degree or Higher": 34,
+                 'High School or Higher': 82.2},
+                {'American Indian and Alaska Native Alone': 2.5,
+                 'Asian Alone': 22,
+                 'Black Alone': 1.6,
+                 'Hispanic or Latino': 6.7,
+                 'Native Hawaiian and Other Pacific Islander Alone': 0.1,
+                 'Two or More Races': 2.8,
+                 'White Alone': 91.5,
+                 'White Alone, not Hispanic or Latino': 85.6},
+                {'Per Capita Income': 19477,
+                 'Persons Below Poverty Level': 5,
+                 'Median Household Income': 39479},
+                {'2010 Population': 61948,
+                 '2014 Population': 10000,
+                 'Population Percent Change': -0.4,
+                 'Population per Square Mile': 104.4},
+                'AR')]
+        string = "Asian Alone"
+        x = .28
+        expected = [array[0], array[2]]
+        result = hw3.ethnicity_less_than(array, string, x)
+        self.assertEqual(expected, result)
+
+        # test poverty_level_greater_than
+
     def test_poverty_level_greater_than(self):
         array = [
             data.CountyDemographics(
@@ -758,7 +841,8 @@ class TestCases(unittest.TestCase):
         result = hw3.below_poverty_level_greater_than(array, string, x)
         self.assertEqual(expected, result)
 
-    # test poverty_level_less_than
+        # test poverty_level_less_than
+
     def test_poverty_level_less_than(self):
         array = [
             data.CountyDemographics(
